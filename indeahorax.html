@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Siquem - Salud y Cultivo Cannábico</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #111;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .section {
+      display: none;
+      height: 100vh;
+      width: 100%;
+      padding: 40px;
+      text-align: center;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section.active {
+      display: flex;
+    }
+
+    h1, h2 {
+      color: #4CAF50;
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #222;
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+      z-index: 10;
+    }
+
+    nav button {
+      background: none;
+      color: #fff;
+      border: none;
+      margin: 0 15px;
+      font-size: 1em;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    nav button:hover {
+      color: #f44336;
+    }
+
+    .main-button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #f44336;
+      border: none;
+      color: white;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .main-button:hover {
+      background-color: #d32f2f;
+    }
+
+    footer {
+      position: absolute;
+      bottom: 10px;
+      width: 100%;
+      text-align: center;
+      font-size: 0.8em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <button onclick="showSection('inicio')">Inicio</button>
+    <button onclick="showSection('vision')">Nuestra Visión</button>
+    <button onclick="showSection('info')">Información</button>
+    <button onclick="showSection('contacto')">Contacto</button>
+  </nav>
+
+  <div id="inicio" class="section active">
+    <h1>Siquem</h1>
+    <p>Salud y Cultivo Cannábico Medicinal</p>
+    <button class="main-button" onclick="showSection('vision')">Entrar</button>
+  </div>
+
+  <div id="vision" class="section">
+    <h2>Nuestra Visión</h2>
+    <p>Impulsamos la salud integral a través del autocultivo responsable y la educación sobre el cannabis medicinal. Promovemos el bienestar físico, mental y espiritual desde la raíz.</p>
+    <button class="main-button" onclick="showSection('info')">Siguiente: Información</button>
+  </div>
+
+  <div id="info" class="section">
+    <h2>¿Qué vas a encontrar aquí?</h2>
+    <p>✅ Información educativa sobre cannabis medicinal<br>
+       ✅ Consejos de cultivo desde cero<br>
+       ✅ Herramientas para el bienestar<br>
+       ✅ Comunidad respetuosa y consciente</p>
+    <button class="main-button" onclick="showSection('contacto')">Siguiente: Contacto</button>
+  </div>
+
+  <div id="contacto" class="section">
+    <h2>Contacto</h2>
+    <p>📞 Llamadas: <a href="tel:+543854476091" style="color:#4CAF50;">3854476091</a><br>
+       💬 WhatsApp: <a href="https://wa.me/543854476091" target="_blank" style="color:#4CAF50;">3854476091</a><br>
+       📱 Telegram: <a href="https://t.me/3854476091" target="_blank" style="color:#4CAF50;">@3854476091</a><br>
+       📢 Canal: <a href="https://t.me/saludycultivocannabico" target="_blank" style="color:#4CAF50;">@saludycultivocannabico</a><br>
+       📧 Email: <a href="mailto:canal.siquem@gmail.com" style="color:#4CAF50;">canal.siquem@gmail.com</a>
+    </p>
+    <button class="main-button" onclick="showSection('inicio')">Volver al inicio</button>
+  </div>
+
+  <footer>
+    &copy; 2025 Siquem - Salud y Cultivo Cannábico. Todos los derechos reservados.
+  </footer>
+
+  <script>
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }
+  </script>
+
+</body>
+</html>
